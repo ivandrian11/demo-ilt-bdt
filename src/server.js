@@ -7,8 +7,8 @@ require("dotenv").config();
 
 const init = async () => {
   const server = Hapi.server({
-    host: "localhost",
-    port: "0.0.0.0",
+    host: "0.0.0.0",
+    port: "3000",
     routes: {
       cors: {
         origin: ["*"],
