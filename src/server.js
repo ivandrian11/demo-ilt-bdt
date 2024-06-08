@@ -8,7 +8,7 @@ require("dotenv").config();
 const init = async () => {
   const server = Hapi.server({
     host: "localhost",
-    port: 3000,
+    port: "0.0.0.0",
     routes: {
       cors: {
         origin: ["*"],
@@ -16,7 +16,7 @@ const init = async () => {
     },
   });
 
-  const productsService = new PostgreService();
+  const productsService = new SupabaseService();
   const productsHandler = new ProductsHandler(productsService);
   server.route(routes(productsHandler));
 
